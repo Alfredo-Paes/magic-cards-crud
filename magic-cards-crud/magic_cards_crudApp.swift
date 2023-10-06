@@ -13,7 +13,7 @@ struct magic_cards_crudApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MagicCardListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
