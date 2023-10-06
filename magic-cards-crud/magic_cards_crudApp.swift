@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct magic_cards_crudApp: App {
-    let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
             MagicCardListView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, MagicCardContainer().persistentContainer.viewContext)
         }
     }
 }
