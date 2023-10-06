@@ -13,6 +13,7 @@
 		7EDE35002ACFA12F00B22BC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE34FF2ACFA12F00B22BC2 /* Preview Assets.xcassets */; };
 		7EDE35022ACFA12F00B22BC2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE35012ACFA12F00B22BC2 /* Persistence.swift */; };
 		7EDE35052ACFA12F00B22BC2 /* magic_cards_crud.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE35032ACFA12F00B22BC2 /* magic_cards_crud.xcdatamodeld */; };
+		7EDE350E2ACFA6BE00B22BC2 /* MagicCardContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE350D2ACFA6BE00B22BC2 /* MagicCardContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		7EDE34FF2ACFA12F00B22BC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7EDE35012ACFA12F00B22BC2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7EDE35042ACFA12F00B22BC2 /* magic_cards_crud.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = magic_cards_crud.xcdatamodel; sourceTree = "<group>"; };
+		7EDE350D2ACFA6BE00B22BC2 /* MagicCardContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCardContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,11 @@
 		7EDE34F72ACFA12D00B22BC2 /* magic-cards-crud */ = {
 			isa = PBXGroup;
 			children = (
+				7EDE350C2ACFA63100B22BC2 /* CoreData */,
 				7EDE34F82ACFA12D00B22BC2 /* magic_cards_crudApp.swift */,
 				7EDE34FA2ACFA12D00B22BC2 /* ContentView.swift */,
 				7EDE34FC2ACFA12F00B22BC2 /* Assets.xcassets */,
 				7EDE35012ACFA12F00B22BC2 /* Persistence.swift */,
-				7EDE35032ACFA12F00B22BC2 /* magic_cards_crud.xcdatamodeld */,
 				7EDE34FE2ACFA12F00B22BC2 /* Preview Content */,
 			);
 			path = "magic-cards-crud";
@@ -71,6 +73,15 @@
 				7EDE34FF2ACFA12F00B22BC2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7EDE350C2ACFA63100B22BC2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7EDE35032ACFA12F00B22BC2 /* magic_cards_crud.xcdatamodeld */,
+				7EDE350D2ACFA6BE00B22BC2 /* MagicCardContainer.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 				7EDE34FB2ACFA12D00B22BC2 /* ContentView.swift in Sources */,
 				7EDE34F92ACFA12D00B22BC2 /* magic_cards_crudApp.swift in Sources */,
 				7EDE35052ACFA12F00B22BC2 /* magic_cards_crud.xcdatamodeld in Sources */,
+				7EDE350E2ACFA6BE00B22BC2 /* MagicCardContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
