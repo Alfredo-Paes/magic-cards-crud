@@ -24,7 +24,7 @@ extension MagicCard {
         flavor ?? ""
     }
     
-    var manaCosCardt: String {
+    var manaCostCard: String {
         manaCost ?? ""
     }
     
@@ -38,5 +38,14 @@ extension MagicCard {
     
     var typeCard: String {
         type ?? ""
+    }
+    
+    var imageCard: UIImage {
+        if !idCard.isEmpty,
+           let image = UIImage(systemName: "photo") {
+            return image
+        } else {
+            return UIImage(systemName: "photo")!
+        }
     }
 }
