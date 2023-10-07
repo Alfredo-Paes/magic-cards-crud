@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct MagicCardFormView: View {
     
     @ObservedObject var magicCardFormViewModel: MagicCardFormViewModel
+    @StateObject var imagePicker = ImagePicker()
+    @FetchRequest(sortDescriptors: [])
+    private var magicCard: FetchedResults<MagicCard>
+    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -24,7 +29,7 @@ struct MagicCardFormView: View {
                     Button("Mudar Imagem") {
                         print("Mudar imagem")
                     }
-                }
+                } 
                 ScrollView {
                     TextField("Nome da Carta", text: $magicCardFormViewModel.name)
                         .padding()
@@ -63,7 +68,37 @@ struct MagicCardFormView: View {
                         .cornerRadius(12)
                     
                     Button(magicCardFormViewModel.updating ? "Editar" : "Cadastrar") {
-                            print("Carta Cadastrada!")
+                        if magicCardFormViewModel.updating {
+                            if let id = magicCardFormViewModel.id,
+                               let selectedImage = magicCard.first(where: {$0.id == id}){
+                                selectedImage.name = magicCardFormViewModel.name
+                                FileManager()
+                                    .saveImage(with: id,
+                                               image: magicCardFormViewModel.imageCard,
+                                               name: magicCardFormViewModel.name
+                                    )
+                                if moc.hasChanges {
+                                    try? moc.save()
+                                }
+                            }
+                        } else {
+                            let newMagicCard = MagicCard(context: moc)
+                            newMagicCard.id = UUID().uuidString
+                            newMagicCard.name = magicCardFormViewModel.name
+                            newMagicCard.text = magicCardFormViewModel.text
+                            newMagicCard.flavor = magicCardFormViewModel.flavor
+                            newMagicCard.manaCost = magicCardFormViewModel.manaCost
+                            newMagicCard.power = magicCardFormViewModel.power
+                            newMagicCard.toughness = magicCardFormViewModel.toughness
+                            newMagicCard.type = magicCardFormViewModel.type
+                            try? moc.save()
+                            FileManager()
+                                .saveImage(with: newMagicCard.idCard,
+                                           image: magicCardFormViewModel.imageCard,
+                                           name: magicCardFormViewModel.name
+                                )
+                        }
+                            dismiss()
                         }
                         .foregroundColor(.white)
                         .font(.title3)
@@ -85,14 +120,21 @@ struct MagicCardFormView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         dismiss()
+                        print(magicCardFormViewModel.updating)
                     } label: {
-                        Text("Cancelar")
+                        Image(systemName: "chevron.backward")
+                        Text("Voltar")
                     }
                 }
                 if magicCardFormViewModel.updating {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            print("Deletar")
+                            if let selectedImage = magicCard.first(where: {$0.id == magicCardFormViewModel.id}) {
+                                FileManager().deleteImage(with: selectedImage.idCard)
+                                moc.delete(selectedImage)
+                                try? moc.save()
+                            }
+                            dismiss()
                         } label: {
                             Image(systemName: "trash.circle.fill")
                         }

@@ -21,7 +21,7 @@ extension FileManager {
     }
     
     
-    func saveImage(with id: String, image: UIImage, comment: String){
+    func saveImage(with id: String, image: UIImage, name: String){
         if let data = image.jpegData(compressionQuality: 0.6) {
             do {
                 let url = URL.documentsDirectory.appendingPathComponent("\(id).jpg")
