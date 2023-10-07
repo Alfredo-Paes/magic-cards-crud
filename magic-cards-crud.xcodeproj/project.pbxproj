@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7E3AF50B2AD10EF20076F585 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3AF50A2AD10EF20076F585 /* FileManager.swift */; };
 		7E3AF50D2AD117840076F585 /* MagicCardFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3AF50C2AD117840076F585 /* MagicCardFormType.swift */; };
+		7E3AF5102AD11C720076F585 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3AF50F2AD11C720076F585 /* ImagePicker.swift */; };
 		7EDE34F92ACFA12D00B22BC2 /* magic_cards_crudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE34F82ACFA12D00B22BC2 /* magic_cards_crudApp.swift */; };
 		7EDE34FB2ACFA12D00B22BC2 /* MagicCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE34FA2ACFA12D00B22BC2 /* MagicCardListView.swift */; };
 		7EDE34FD2ACFA12F00B22BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE34FC2ACFA12F00B22BC2 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		7E3AF50A2AD10EF20076F585 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		7E3AF50C2AD117840076F585 /* MagicCardFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCardFormType.swift; sourceTree = "<group>"; };
+		7E3AF50F2AD11C720076F585 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		7EDE34F52ACFA12D00B22BC2 /* magic-cards-crud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "magic-cards-crud.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDE34F82ACFA12D00B22BC2 /* magic_cards_crudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = magic_cards_crudApp.swift; sourceTree = "<group>"; };
 		7EDE34FA2ACFA12D00B22BC2 /* MagicCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCardListView.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				7E3AF50A2AD10EF20076F585 /* FileManager.swift */,
+				7E3AF50F2AD11C720076F585 /* ImagePicker.swift */,
 			);
 			path = useCases;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				7E3AF50B2AD10EF20076F585 /* FileManager.swift in Sources */,
 				7EDE34F92ACFA12D00B22BC2 /* magic_cards_crudApp.swift in Sources */,
 				7EDE35052ACFA12F00B22BC2 /* magic_cards_crud.xcdatamodeld in Sources */,
+				7E3AF5102AD11C720076F585 /* ImagePicker.swift in Sources */,
 				7EDE35192ACFC2A400B22BC2 /* MagicCardFormViewModel.swift in Sources */,
 				7EDE350E2ACFA6BE00B22BC2 /* MagicCardContainer.swift in Sources */,
 			);
