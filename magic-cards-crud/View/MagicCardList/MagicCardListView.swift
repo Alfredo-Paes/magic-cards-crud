@@ -11,7 +11,88 @@ import CoreData
 struct MagicCardListView: View {
 
     var body: some View {
-       Text("Oi")
+        VStack {
+            ScrollView {
+                VStack {
+                    HStack {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .font(.largeTitle)
+                            .bold()
+                            .symbolRenderingMode(.monochrome)
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                        VStack(alignment: .leading) {
+                            Text("Carta")
+                                .font(.title2)
+                                .bold()
+                            Text("Fogo")
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(.white)
+                    .cornerRadius(16)
+                    HStack {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .font(.largeTitle)
+                            .bold()
+                            .symbolRenderingMode(.monochrome)
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                        VStack(alignment: .leading) {
+                            Text("Carta")
+                                .font(.title2)
+                                .bold()
+                            Text("Fogo")
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(.white)
+                    .cornerRadius(16)
+                    HStack {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .font(.largeTitle)
+                            .bold()
+                            .symbolRenderingMode(.monochrome)
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                        VStack(alignment: .leading) {
+                            Text("Carta")
+                                .font(.title2)
+                                .bold()
+                            Text("Fogo")
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(.white)
+                    .cornerRadius(16)
+                    HStack {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .font(.largeTitle)
+                            .bold()
+                            .symbolRenderingMode(.monochrome)
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                        VStack(alignment: .leading) {
+                            Text("Carta")
+                                .font(.title2)
+                                .bold()
+                            Text("Fogo")
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(.white)
+                    .cornerRadius(16)
+                }.padding()
+            }.background(Color(uiColor: .systemGray6))
+        }
     }
 }
 
