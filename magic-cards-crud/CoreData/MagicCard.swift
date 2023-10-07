@@ -42,7 +42,7 @@ extension MagicCard {
     
     var imageCard: UIImage {
         if !idCard.isEmpty,
-           let image = UIImage(systemName: "photo") {
+           let image = FileManager().retrieveImage(with: idCard) {
             return image
         } else {
             return UIImage(systemName: "photo")!
