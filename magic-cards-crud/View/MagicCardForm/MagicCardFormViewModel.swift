@@ -18,7 +18,8 @@ class MagicCardFormViewModel: ObservableObject {
     @Published var imageCard: UIImage
     
     var id: String?
-    var updating: Bool { id != nil }
+    //var updating: Bool { id != nil }
+    var updating: Bool = true
     
     init(_ imageCard: UIImage){
         self.imageCard = imageCard
