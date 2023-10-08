@@ -11,6 +11,7 @@ class MagicCardFormViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var text: String = ""
     @Published var flavor: String = ""
+    @Published var manaColor: String = ""
     @Published var manaCost: String = ""
     @Published var power: String = ""
     @Published var toughness: String = ""
@@ -29,6 +30,7 @@ class MagicCardFormViewModel: ObservableObject {
         name = magicCard.nameCard
         text = magicCard.textCard
         flavor = magicCard.flavorCard
+        manaColor = magicCard.manaColorCard
         manaCost = magicCard.manaCostCard
         power = magicCard.powerCard
         toughness = magicCard.toughnessCard

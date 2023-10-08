@@ -28,7 +28,7 @@ struct MagicCardDetailView: View {
                         .frame(width: 335, height: 500)
                    
                     HStack {
-                        Text("Descrição: ")
+                        Text("Texto de Regra: ")
                             .font(.title2)
                             .bold()
                         Text(magicCardDetailView.text)
@@ -38,10 +38,20 @@ struct MagicCardDetailView: View {
                      .background(.white)
                      .cornerRadius(16)
                     HStack {
-                        Text("Frase: ")
+                        Text("Texto Ilustrativo: ")
                             .font(.title2)
                             .bold()
                         Text(magicCardDetailView.flavor).italic()
+                    }.padding()
+                     .padding(.bottom, 2)
+                     .frame(maxWidth: .infinity, alignment: .leading)
+                     .background(.white)
+                     .cornerRadius(16)
+                    HStack {
+                        Text("Cor de Mana: ")
+                            .font(.title2)
+                            .bold()
+                        Text(magicCardDetailView.manaColor)
                     }.padding()
                      .padding(.bottom, 2)
                      .frame(maxWidth: .infinity, alignment: .leading)
@@ -66,7 +76,7 @@ struct MagicCardDetailView: View {
                         }
                         Text("/").bold()
                         HStack {
-                            Text("Defesa: ")
+                            Text("Resistência: ")
                                 .font(.title2)
                                 .bold()
                             Text(magicCardDetailView.toughness)

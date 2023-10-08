@@ -48,6 +48,11 @@ struct MagicCardFormView: View {
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
+                    TextField("Cor de Mana", text: $magicCardFormViewModel.manaColor)
+                        .padding()
+                        .keyboardType(.decimalPad)
+                        .frame(width: 335, height: 50)
+                        .background(Color(uiColor: .systemGray6))
                     TextField("Custo de Mana", text: $magicCardFormViewModel.manaCost)
                         .padding()
                         .keyboardType(.decimalPad)
@@ -94,6 +99,7 @@ struct MagicCardFormView: View {
                             newMagicCard.text = magicCardFormViewModel.text
                             newMagicCard.flavor = magicCardFormViewModel.flavor
                             newMagicCard.manaCost = magicCardFormViewModel.manaCost
+                            newMagicCard.manaColor = magicCardFormViewModel.manaColor
                             newMagicCard.power = magicCardFormViewModel.power
                             newMagicCard.toughness = magicCardFormViewModel.toughness
                             newMagicCard.type = magicCardFormViewModel.type

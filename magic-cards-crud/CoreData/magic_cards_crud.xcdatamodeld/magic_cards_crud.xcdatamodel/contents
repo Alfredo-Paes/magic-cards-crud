@@ -3,6 +3,7 @@
     <entity name="MagicCard" representedClassName="MagicCard" syncable="YES" codeGenerationType="class">
         <attribute name="flavor" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="manaColor" optional="YES" attributeType="String"/>
         <attribute name="manaCost" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="power" optional="YES" attributeType="String"/>

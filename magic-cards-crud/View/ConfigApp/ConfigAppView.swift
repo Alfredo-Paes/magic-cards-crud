@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ConfigAppView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                Section(header: Text("Configurações")
+                    .font(.title2)
+                    .bold()) {
+                    NavigationLink(destination: InfoAppView()) {
+                        Text("Sobre")
+                        Image(systemName: "info.circle")
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -24,6 +24,10 @@ extension MagicCard {
         flavor ?? ""
     }
     
+    var manaColorCard: String {
+        manaColor ?? ""
+    }
+    
     var manaCostCard: String {
         manaCost ?? ""
     }

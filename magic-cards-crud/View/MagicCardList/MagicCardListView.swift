@@ -93,8 +93,8 @@ struct MagicCardListView: View {
             .navigationTitle("Meu Deck de Magic")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Configurações"){
-                        print("Nova Carta")
+                    NavigationLink(destination: ConfigAppView()) {
+                        Image(systemName: "gearshape")
                     }
                 }
                 if !magicCard.isEmpty {
