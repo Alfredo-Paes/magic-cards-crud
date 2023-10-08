@@ -15,43 +15,79 @@ struct MagicCardDetailView: View {
 
     var body: some View {
         NavigationStack {
+            VStack(alignment: .leading) {
+                Text(magicCardDetailView.name)
+                    .font(.title)
+                    .bold()
+            }
             ScrollView {
                 VStack {
                     Image(uiImage: magicCardDetailView.imageCard)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 335, height: 700)
-                        .padding()
+                        .frame(width: 335, height: 500)
+                   
                     HStack {
-                        Text("Nome da Carta")
-                        Text(magicCardDetailView.name)
-                    }
-                    HStack {
-                        Text("Descrição")
+                        Text("Descrição: ")
+                            .font(.title2)
+                            .bold()
                         Text(magicCardDetailView.text)
-                    }
+                    }.padding()
+                     .padding(.bottom, 2)
+                     .frame(maxWidth: .infinity, alignment: .leading)
+                     .background(.white)
+                     .cornerRadius(16)
                     HStack {
-                        Text("Frase")
-                        Text(magicCardDetailView.flavor)
-                    }
+                        Text("Frase: ")
+                            .font(.title2)
+                            .bold()
+                        Text(magicCardDetailView.flavor).italic()
+                    }.padding()
+                     .padding(.bottom, 2)
+                     .frame(maxWidth: .infinity, alignment: .leading)
+                     .background(.white)
+                     .cornerRadius(16)
                     HStack {
-                        Text("Custo de Mana")
+                        Text("Custo de Mana: ")
+                            .font(.title2)
+                            .bold()
                         Text(magicCardDetailView.manaCost)
-                    }
+                    }.padding()
+                     .padding(.bottom, 2)
+                     .frame(maxWidth: .infinity, alignment: .leading)
+                     .background(.white)
+                     .cornerRadius(16)
                     HStack {
-                        Text("Poder")
-                        Text(magicCardDetailView.power)
-                    }
+                        HStack {
+                            Text("Poder: ")
+                                .font(.title2)
+                                .bold()
+                            Text(magicCardDetailView.power)
+                        }
+                        Text("/").bold()
+                        HStack {
+                            Text("Defesa: ")
+                                .font(.title2)
+                                .bold()
+                            Text(magicCardDetailView.toughness)
+                        }
+                    }.padding()
+                     .padding(.bottom, 2)
+                     .frame(maxWidth: .infinity, alignment: .leading)
+                     .background(.white)
+                     .cornerRadius(16)
                     HStack {
-                        Text("Desfesa")
-                        Text(magicCardDetailView.toughness)
-                    }
-                    HStack {
-                        Text("Tipo")
+                        Text("Tipo: ")
+                            .font(.title2)
+                            .bold()
                         Text(magicCardDetailView.type)
-                    }
-                }
-            }
+                    }.padding()
+                     .padding(.bottom, 2)
+                     .frame(maxWidth: .infinity, alignment: .leading)
+                     .background(.white)
+                     .cornerRadius(16)
+                }.padding()
+            }.background(Color(uiColor: .systemGray6))
         }
     }
 }
