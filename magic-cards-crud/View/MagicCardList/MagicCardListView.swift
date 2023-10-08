@@ -47,7 +47,7 @@ struct MagicCardListView: View {
                                      .frame(width: 40, height: 40)
                                      .background(Color.purple)
                                      .cornerRadius(10)
-                                    NavigationLink(destination: MagicCardFormView(magicCardFormViewModel: MagicCardFormViewModel(MyCard))) {
+                                    NavigationLink(destination: MagicCardDetailView(magicCardDetailView: MagicCardFormViewModel(MyCard))) {
                                         Image(systemName: "eye.fill")
                                     }.foregroundColor(.white)
                                      .font(.title3)
