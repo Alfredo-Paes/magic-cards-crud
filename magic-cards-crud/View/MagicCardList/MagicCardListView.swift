@@ -22,29 +22,44 @@ struct MagicCardListView: View {
                     ScrollView {
                         ForEach(magicCard) { MyCard in
                             VStack {
-                                Button {
-                                    magicCardFormType = .update(MyCard)
-                                } label: {
-                                    HStack {
-                                        Image(uiImage: MyCard.imageCard)
-                                            .resizable()
-                                            .font(.largeTitle)
+                                HStack {
+                                    Image(uiImage: MyCard.imageCard)
+                                        .resizable()
+                                        .font(.largeTitle)
+                                        .bold()
+                                        .symbolRenderingMode(.monochrome)
+                                        .scaledToFit()
+                                        .frame(width: 50, height: 50)
+                                    VStack(alignment: .leading) {
+                                        Text(MyCard.nameCard)
+                                            .font(.title2)
                                             .bold()
-                                            .symbolRenderingMode(.monochrome)
-                                            .scaledToFit()
-                                            .frame(width: 50, height: 50)
-                                        VStack(alignment: .leading) {
-                                            Text(MyCard.nameCard)
-                                                .font(.title2)
-                                                .bold()
-                                            Text(MyCard.typeCard)
-                                        }
+                                        Text(MyCard.typeCard)
                                     }
-                                    .padding()
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .background(.white)
-                                    .cornerRadius(16)
+                                    Button {
+                                        magicCardFormType = .update(MyCard)
+                                    } label: {
+                                        Image(systemName: "square.and.pencil")
+                                    }
+                                    .foregroundColor(.white)
+                                     .font(.title3)
+                                     .bold()
+                                     .frame(width: 40, height: 40)
+                                     .background(Color.purple)
+                                     .cornerRadius(10)
+                                    NavigationLink(destination: MagicCardFormView(magicCardFormViewModel: MagicCardFormViewModel(MyCard))) {
+                                        Image(systemName: "eye.fill")
+                                    }.foregroundColor(.white)
+                                     .font(.title3)
+                                     .bold()
+                                     .frame(width: 40, height: 40)
+                                     .background(Color.blue)
+                                     .cornerRadius(10)
                                 }
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(.white)
+                                .cornerRadius(16)
                             }.padding()
                         }
                     }.background(Color(uiColor: .systemGray6))

@@ -120,7 +120,6 @@ struct MagicCardFormView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         dismiss()
-                        print(magicCardFormViewModel.updating)
                     } label: {
                         Image(systemName: "chevron.backward")
                         Text("Voltar")
