@@ -26,41 +26,47 @@ struct MagicCardFormView: View {
                     .frame(width: 335, height: 230)
                     .padding()
                 if magicCardFormViewModel.updating {
-                    Button("Mudar Imagem") {
-                        print("Mudar imagem")
-                    }
+                    PhotosPicker("Mudar Imagem",
+                                 selection: $imagePicker.imageSelection,
+                                 matching: .images,
+                                 photoLibrary: .shared()
+                    )
                 } 
                 ScrollView {
-                    TextField("Nome da Carta", text: $magicCardFormViewModel.name)
+                    TextField("Nome do Card", text: $magicCardFormViewModel.name)
                         .padding()
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
-                    TextField("Descrição", text: $magicCardFormViewModel.text)
+                    TextField("Texto de Regra", text: $magicCardFormViewModel.text)
                         .padding()
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
-                    TextField("Frase", text: $magicCardFormViewModel.flavor)
+                    TextField("Texto Ilustrativo", text: $magicCardFormViewModel.flavor)
                         .padding()
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
                     TextField("Custo de Mana", text: $magicCardFormViewModel.manaCost)
                         .padding()
+                        .keyboardType(.decimalPad)
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
                     TextField("Poder", text: $magicCardFormViewModel.power)
                         .padding()
+                        .keyboardType(.decimalPad)
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
-                    TextField("Desfesa", text: $magicCardFormViewModel.toughness)
+                    TextField("Resistência", text: $magicCardFormViewModel.toughness)
                         .padding()
+                        .keyboardType(.decimalPad)
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
+                    
                     TextField("Tipo", text: $magicCardFormViewModel.type)
                         .padding()
                         .frame(width: 335, height: 50)
@@ -140,6 +146,10 @@ struct MagicCardFormView: View {
                         .buttonStyle(.borderedProminent)
                         .tint(.red)
                     }
+                }
+            } .onChange(of: imagePicker.uiImage) { newImage in
+                if let newImage {
+                    magicCardFormViewModel.imageCard = newImage
                 }
             }
         }
