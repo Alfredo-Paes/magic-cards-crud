@@ -18,6 +18,10 @@ struct ConfigAppView: View {
                         Text("Sobre")
                         Image(systemName: "info.circle")
                     }
+                    NavigationLink(destination: DeleteAllView()) {
+                        Text("Excluir dados")
+                        Image(systemName: "trash.circle")
+                    }
                 }
             }
         }

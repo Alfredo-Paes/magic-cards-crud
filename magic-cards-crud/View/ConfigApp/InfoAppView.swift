@@ -16,7 +16,7 @@ struct InfoAppView: View {
         VStack(alignment: .center, spacing: 16) {
             Text("Meu Deck de Magic")
                 .font(.largeTitle)
-            Text("Essa aplicação possui a finalidade de permitir ao usúario pode cadastrar a suas cartas do jogo Magic: The Gathering. Nessa aplicação, o usuário pode registrar, editar, listar e reomver as cartas de seu deck, ou grimório.")
+            Text("Essa aplicação possui a finalidade de permitir ao usúario poder cadastrar a suas cartas do jogo Magic: The Gathering. Nessa aplicação, o usuário pode registrar, editar, listar e reomver as cartas de seu deck(grimório).")
                 .font(.title3)
                 .padding()
             Text(.init(infoMagic))
