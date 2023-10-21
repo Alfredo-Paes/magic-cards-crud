@@ -71,18 +71,24 @@ struct MagicCardFormView: View {
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
-                    
                     TextField("Tipo", text: $magicCardFormViewModel.type)
                         .padding()
                         .frame(width: 335, height: 50)
                         .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
-                    
+
                     Button(magicCardFormViewModel.updating ? "Editar" : "Cadastrar") {
                         if magicCardFormViewModel.updating {
                             if let id = magicCardFormViewModel.id,
                                let selectedImage = magicCard.first(where: {$0.id == id}){
                                 selectedImage.name = magicCardFormViewModel.name
+                                selectedImage.text = magicCardFormViewModel.text
+                                selectedImage.flavor = magicCardFormViewModel.flavor
+                                selectedImage.manaCost = magicCardFormViewModel.manaCost
+                                selectedImage.manaColor = magicCardFormViewModel.manaColor
+                                selectedImage.power = magicCardFormViewModel.power
+                                selectedImage.toughness = magicCardFormViewModel.toughness
+                                selectedImage.type = magicCardFormViewModel.type
                                 FileManager()
                                     .saveImage(with: id,
                                                image: magicCardFormViewModel.imageCard,

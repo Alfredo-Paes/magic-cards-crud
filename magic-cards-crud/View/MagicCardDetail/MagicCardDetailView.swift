@@ -67,25 +67,28 @@ struct MagicCardDetailView: View {
                      .frame(maxWidth: .infinity, alignment: .leading)
                      .background(.white)
                      .cornerRadius(16)
-                    HStack {
+                    if !magicCardDetailView.power.isEmpty && !magicCardDetailView.toughness.isEmpty {
                         HStack {
-                            Text("Poder: ")
-                                .font(.title2)
-                                .bold()
-                            Text(magicCardDetailView.power)
-                        }
-                        Text("/").bold()
-                        HStack {
-                            Text("Resistência: ")
-                                .font(.title2)
-                                .bold()
-                            Text(magicCardDetailView.toughness)
-                        }
-                    }.padding()
-                     .padding(.bottom, 2)
-                     .frame(maxWidth: .infinity, alignment: .leading)
-                     .background(.white)
-                     .cornerRadius(16)
+                            HStack {
+                                Text("Poder: ")
+                                    .font(.title2)
+                                    .bold()
+                                Text(magicCardDetailView.power)
+                            }
+                            Text("/").bold()
+                            HStack {
+                                Text("Resistência: ")
+                                    .font(.title2)
+                                    .bold()
+                                Text(magicCardDetailView.toughness)
+                            }
+                        }.padding()
+                         .padding(.bottom, 2)
+                         .frame(maxWidth: .infinity, alignment: .leading)
+                         .background(.white)
+                         .cornerRadius(16)
+                    }
+                    
                     HStack {
                         Text("Tipo: ")
                             .font(.title2)
